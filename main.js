@@ -66,7 +66,7 @@ function run(code) {
 			if (b) {
 				if(f=="menlo"){
 					// console.log(op)
-					document.getElementById("output").innerText+="\n"+op
+					document.getElementById("output").innerText+=op+"\n"
 					op=""
 				}
 				if(f=="courier"){
