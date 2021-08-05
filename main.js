@@ -1,7 +1,7 @@
 
 let lorem=document.getElementById("lorem").innerHTML.replace(/<\/?div>/g,"")
 function toEl(c) {
-	if(typeof c=="string")c=c.split(" ")
+	if(typeof c=="string")c=c.toLowerCase().split(" ")
 	let el = document.createElement("span")
 	c.forEach((e, nd) => {
 		let h = document.createElement("span"),
@@ -21,22 +21,26 @@ function toEl(c) {
 	return el
 }
 function gen(text) {
-	return text.split("").map(e=>e.charCodeAt()).join(" serif .courier #menlo ")+" serif .courier .menlo"
+	return(text.split("").map(e=>e.charCodeAt()).join(" serif .courier #menlo ")+" serif .courier .menlo")
 }
-let t = toEl(gen("Hello, world"))
-, funs = [
+let funs = [
 	n => { //"peek"
 		return `ss[cst][ss[cst].length-1]=ss[cst][ss[cst].length-(1+${n})]`
 	}
 ]
-document.getElementById("test").innerHTML = t.innerHTML
-run(t)
+//document.getElementById("test").innerHTML = t.innerHTML
+//run(t)
+if(new URL(window.location).searchParams.get("code")!==null){
+	document.getElementById("ta").value=decodeURI(new URL(window.location).searchParams.get("code"))
+}
 function run(code) {
 	let ss = [[0]],
 		cs = code.childNodes,
 		op="",
 		cst=0
+	document.getElementById("output").innerText=""
 	for (var nd = 0; nd < cs.length; nd++) {
+		ss[cst]=ss[cst]||[0]
 		let e=cs[nd]
 		let f = e.style.fontFamily,
 			b = e.style.fontWeight == "1000",
@@ -61,7 +65,9 @@ function run(code) {
 			}
 			if (b) {
 				if(f=="menlo"){
-					console.log(op)
+					// console.log(op)
+					document.getElementById("output").innerText+="\n"+op
+					op=""
 				}
 				if(f=="courier"){
 					op+=String.fromCharCode(ss[cst][ss[cst].length-1])
