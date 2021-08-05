@@ -16,20 +16,25 @@
 
 <body>
 	<template id=lorem>
-		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus perferendis quam mollitia illo eligendi. Possimus iure quia itaque, ut nam, qui dolore. Officiis laborum in cupiditate minima, quasi quod cum.</div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus perferendis quam mollitia illo eligendi. Possimus iure quia itaque, ut nam, qui dolore. Officiis laborum in cupiditate minima, quasi quod con.</div>
 		<div>Officiis provident, maxime quidem aliquid quas quis. Sed incidunt aut vel eius voluptatem magni debitis, reiciendis quos aspernatur totam nobis omnis aperiam ex molestias est quae fugiat illo laudantium eum.</div>
-		<div>Corporis ea tenetur harum aliquam aut numquam, asperiores omnis autem perspiciatis similique quidem temporibus, necessitatibus vero doloremque, veritatis est cum architecto. Odio animi eaque perspiciatis ullam temporibus voluptatem pariatur commodi?</div>
+		<div>Corporis ea tenetur harum aliquam aut numquam, asperiores omnis autem perspiciatis similique quidem temporibus, necessitatibus vero doloremque, veritatis est con architecto. Odio animi eaque perspiciatis ullam temporibus voluptatem pariatur commodi?</div>
 		<div>Non atque blanditiis rerum vitae nobis porro, impedit corporis similique consectetur, possimus dolor hic voluptate amet dolores saepe voluptatem nihil repellendus laboriosam doloribus modi nisi. Facilis, non aperiam dolore assumenda.</div>
-		<div>Adipisci fuga magnam obcaecati dolorem accusamus odio, voluptatum quas accusantium, dicta beatae esse quae, non! Natus, nihil, hic quos, qui id eos cumque incidunt veritatis suscipit at quas, ullam tenetur.</div>
-		<div>Ex hic nemo natus, quod et nobis accusantium quasi pariatur quis impedit atque a, quidem cumque, quos voluptatum. Sint iusto rerum eos delectus perspiciatis at cum, nam nihil recusandae sequi.</div>
+		<div>Adipisci fuga magnam obcaecati dolorem accusamus odio, voluptatum quas accusantium, dicta beatae esse quae, non! Natus, nihil, hic quos, qui id eos conque incidunt veritatis suscipit at quas, ullam tenetur.</div>
+		<div>Ex hic nemo natus, quod et nobis accusantium quasi pariatur quis impedit atque a, quidem conque, quos voluptatum. Sint iusto rerum eos delectus perspiciatis at con, nam nihil recusandae sequi.</div>
 		<div>Nesciunt, natus iusto. Consectetur eveniet corporis explicabo vel hic, esse, laborum aut modi blanditiis ipsa eligendi voluptatum. Perspiciatis hic vel aut, dolores ab molestiae perferendis rem nobis deserunt odio voluptates.</div>
 		<div>Laborum, quas, iusto? Rem nesciunt illo sequi quae inventore, eius quibusdam id. Maiores iste ea natus consequuntur quibusdam. Est modi vitae nihil perferendis vero repudiandae libero quaerat minima in. Quia.</div>
-		<div>Rem eligendi, fuga officia veniam non, iure cumque, placeat ipsum explicabo iusto accusamus possimus eos quis. Quas consectetur nobis blanditiis tempore minus veritatis, expedita sed suscipit aliquid rem repellendus, autem.</div>
+		<div>Rem eligendi, fuga officia veniam non, iure conque, placeat ipsum explicabo iusto accusamus possimus eos quis. Quas consectetur nobis blanditiis tempore minus veritatis, expedita sed suscipit aliquid rem repellendus, autem.</div>
 		<div>Quaerat nobis quisquam, sint excepturi amet nisi, nostrum aliquid impedit quidem. Qui tempora odio eaque, quam aliquam aliquid nihil soluta nemo sequi corporis nostrum, maiores dolore iusto facilis. Omnis, et?</div>
 	</template>
-	<textarea id=ta style="height:300px;width:90vw;background-color:#222;"></textarea><br />
-	<button onclick="let ts=(toEl(ta.value));document.getElementById('test').innerHTML = ts.innerHTML;run(ts)">run</button>
-  <p id=test></p>
+	<textarea placeholder="Enter some code in text format" id=ta style="height:300px;width:90vw;background-color:#222;"></textarea><br />
+	<button onclick="let ts=(toEl(ta.value));document.getElementById('test').innerHTML = ts.innerHTML;document.getElementById('stack').innerHTML='['+run(ts).map(e=>e.join(', ')).join('], [')+']';">run</button>
+  <details open><summary>Font format</summary><p id=test></p></details>
+  <details open>
+  	<summary>Output</summary>
+  	<pre><code id=output></code></pre>
+  </details>
+  <details open><summary>Stack state</summary><pre><code id=stack></code></pre></details>
   <!-- Project -->
   <script src="main.js"></script>
 </body>
