@@ -55,7 +55,7 @@ Bold represents a super advanced high-tech fancy hacker action.
 Text is pushed to a string where it can later be printed out.
 
 - bold
-  - menlo: print the text in the string
+  - menlo: print the text in the string then resets the string
   - courier: add the value at the top of the stack as an ascii character to the string
   - serif: goes to the next stack
   - sans-serif: goes to the previous stack
@@ -70,3 +70,8 @@ functions:
 Sets the top of the stack to the value of the cell thingy $1 cells below the top of the stack (so "add 10; push 1; push 39; peek 1" results in the stack becoming [10,39,10])
 
 Uh more functions coming soon
+
+Bold italics are valid, they do the italic function then the bold function, which makes it rather useless. It also seems that courier doesn't have an italic bold version.
+
+# Other random things:
+- the numbers in the editors are red as a form of syntax highlighting.
